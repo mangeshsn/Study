@@ -1,4 +1,4 @@
-List | Tuple | Set | List
+List | Tuple | Set | Dict
 ===================
 ---------
     Data structures
