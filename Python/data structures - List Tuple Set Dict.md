@@ -200,6 +200,172 @@ x = [2, 5, 8, 12]
 print (sum(x))       # prints 27
 print (sum(x[-2:]))  # prints 20
 ```
+#### sorting
+> - Returns a new list of items in sorted order
+> - Does not change the original list
 
-## 6:48
-https://www.youtube.com/watch?v=R-HLU9Fl5ug
+#### String 
+```python
+x = 'bug'
+print (sorted(x))       # prints ['b', 'g', 'u']
+```
+
+#### List
+```python
+x = ['pig', 'cow', 'horse']
+print (sorted(x))       # prints ['cow', 'horse', 'pig']
+```
+#### count (item)
+> - Returns count of an item
+
+####  String
+```python
+x = 'hippo'
+print (x.count('p'))       # prints 2
+```
+
+#### List
+```python
+x = ['pig', 'cow', 'cow', 'horse']
+print (x.count('cow'))       # prints 2
+```
+
+#### index (item)
+> - Returns the index of the first occurrence of an item
+
+####  String
+```python
+x = 'hippo'
+print (x.index('p'))       # prints 2
+```
+
+#### List
+```python
+x = ['pig', 'cow', 'cow', 'horse']
+print (x.index('cow'))       # prints 1
+```
+#### unpacking
+> - Unpack the n items of a sequence into n variables
+
+#### List
+```python
+x = ['pig', 'cow', 'cow', 'horse']
+a, b, c = x         # a is 'pig'
+                    # b is 'cow'
+                    # c is 'horse'
+```
+> **Note:**
+The number of cariables must exactly match the length of the list
+
+Lists functions
+====================
+#### constructors - creating a new list
+
+```python
+x = list()
+x = ['a', 25, 'dog', 8.43]
+x = list(tuple1)        # will give list from a tuple
+```
+
+##### List Comprehension:
+```python
+x = [m for m in range(8)]       # results [0, 1, 2, 3, 4, 5, 6, 7]
+
+```
+
+#### delete
+> - Delete a list or an item from a list
+
+```python
+x = [5, 3, 8, 6]
+del(x[1])       # results [5, 8, 6]
+
+del(x)          # deletes list x
+```
+
+#### append
+> - Append an item to a list
+```python
+x = [5, 3, 8, 6]
+x.append(7)     # results [5, 3, 8, 6, 7]
+```
+
+#### extend
+> - Append an sequence to a list
+```python
+x = [5, 3, 8, 6]
+y = [12, 13]
+x.extend(y)     # results [5, 3, 8, 6, 7, 12, 13]
+```
+#### insert
+> - Insert an item at given index       x.insert(index, item)
+
+```python
+x = [5, 3, 8, 6]
+x.insert(1, 7)     # results [5, 7, 3, 8, 6]
+x.insert(1, ['a', 'm'])     # results [5, ['a', 'm'], 3, 8, 6]
+```
+
+#### pop
+> - Pops last item off the list, and returns item
+```python
+x = [5, 3, 8, 6]
+x.pop()     # results [5, 7, 3, 8, 6]
+            # and returns 6
+            
+print(x.pop())  # prints 8
+                # x is now [5, 3]
+```
+
+#### remove
+> - Remove first instance of an item
+```python
+x = [5, 3, 8, 6, 3]
+x.remove(3)     # results [5, 8, 6, 3]
+ ```
+#### reverse
+> - Remove the order of the list
+```python
+x = [5, 3, 8, 6]
+x.reverse()     # results [6, 8, 3, 5]
+```
+#### sort
+> - Sort the list in place
+```python
+x = [5, 3, 8, 6]
+x.sort()     # results [3, 5, 6, 8]
+```
+> **Note:**
+sorted(x) returns a new sorted list without changing the original list x.
+x.sort() puts the items of x in sorted order (sorts in place)
+
+Tuples
+====================
+> - Support all operations for Sequences
+> - Immutable, but member objects may be mutable
+> - If the contents of a list shouldn't change, use a tuple to prevent items from accidently being added, changed or deleted
+> - Tuples are more efficient than lists due to Python's implementation
+
+#### constructors - creating a new tuple
+```python
+x = ()              # no-item tuple
+x = (1, 2, 3)       
+x = 1, 2, 3         # parenthesis are optional
+x = 2,              # single-item tuple
+x = tuple(list1)    # tuple from list
+```
+
+#### immutable
+> - But member objects may be mutable
+
+```python
+x = (1, 2, 3)
+del(x[1])           # error!
+x[1] = 8            # error!
+
+x = ([1,2], 3)      # 2-item tuple: list and int
+del(x[0][1])        # ([1], 3)
+```
+
+13:34
+[video](https://www.youtube.com/watch?v=R-HLU9Fl5ug)
