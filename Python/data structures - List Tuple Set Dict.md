@@ -366,6 +366,77 @@ x[1] = 8            # error!
 x = ([1,2], 3)      # 2-item tuple: list and int
 del(x[0][1])        # ([1], 3)
 ```
+Sets
+====================
+#### constructors - creating a new set
+```python
+x = {3, 5, 3, 5}        # {3,5}
+x = set()               # empty set
+x = set(list1)          #strips duplicates
+```
 
-13:34
-[video](https://www.youtube.com/watch?v=R-HLU9Fl5ug)
+##### List Comprehension:
+```python
+x = {3*y for y in range(10) if y>5}
+                        # resulting set: {18, 21, 24, 27} in random order
+```
+
+#### basic set operations
+```python
+x.add(item)         #Add item to set x
+x.remove(item)      # Remove item from set x
+len(x)              # Get length of set x
+item in x           # checking membership in x
+item not in x
+x.pop()             # pop random item from set x
+x.clear()           # Delete all items from set x
+```
+#### standard mathematical set operations
+```python
+# code                  # Description           # Set Funtion
+set1 & set2             # AND                   # Intersection
+set1 | set2             # OR                    # Union
+set1 ^ set2             # XOR                   # Symmetric Difference
+set1 - set2             # in s1 but not in s2   # Difference
+set1 <= set2            # set2 contains set1    # Subset
+set1 >= set2            # set1 contains set2    # Superset
+```
+
+Dictionaries
+====================
+#### constructors - creating a new dict
+
+```python
+x = {'pork':25.3, 'beef':33.8, 'chicken':22.7}
+x = dict([('pork',25.3), ('beef',34.4) ,('chicken',22.7)])
+x = dict(pork=24.5, beef=33.4)
+```
+
+#### basic dict operations
+```python
+x['beef'] = 25.2            # Add or change item in dict x
+del x['beef']               # Remove item from dict x
+len(x)                      # Get length of dict x
+item in x                   # Check membership in x (only looks
+item not in x               # in keys, not in values)
+x.clear                     # Delete all items from dict x
+del x                       # Delete dict x
+```
+
+#### accessing keys and values in a dict
+
+```python 
+x.keys()            # returns list of keys in x
+x.values()          # returns list of values in x
+x.items()           # returns list of key-value tuple pairs in x
+item in x.values()  # tests membership in x: returns boolean
+
+# iterating a dict
+for key in x:               # iterate keys
+    print(key, x[key])      # print key value pair
+    
+for k, v in x.items():      # iterate key/value pairs
+    print(k, v)             # print all key/value pairs
+
+# Note: Entries in a dict are in random order.
+```
