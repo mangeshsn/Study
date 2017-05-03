@@ -44,7 +44,7 @@ switched to db mycustomers
 
 ```sh
 # create user:
-db.createUser({
+$ db.createUser({
     user:"mongo",
     pwd:"1234",
     roles:["readWrite,"dbAdmin"],
@@ -73,8 +73,8 @@ $ db.customers.insert({first_name:"joey",last_name:"joe"},{first_name:"chandler"
 ```
 ##### pretty
 ```sh
-db.customers.find()
-db.customers.find().pretty();
+$ db.customers.find()
+$ db.customers.find().pretty();
 ```
 ##### update document
 ```sh
@@ -115,17 +115,16 @@ $ db.customers.update({first_name:"mary"},{$rename:{"gender":"sex"}});
 ```
 ##### removing document
 ```sh
-db.customers.remove({first_name"john"});
+$ db.customers.remove({first_name"john"});
 ```
 ##### justOne
 ```sh
-#refine
-db.customers.remove({first_name"john"},{justOne:true});
+$ db.customers.remove({first_name"john"},{justOne:true});
 # just one will remove first record it finds
 ```
 ##### find
 ```sh
- db.customers.find({first_name:"sharon"});
+$ db.customers.find({first_name:"sharon"});
 # if want to find more records
 ```
 ##### or operator
@@ -135,7 +134,7 @@ $ db.customers.find($or:[{first_name:"sharon"},{first_name:"troy"}]);
 #####  $lt,$gt operator
 ```sh
 #  $lt,$gt less than ,greator than
-db.customers.find({age:{$lt:40}});
+$ db.customers.find({age:{$lt:40}});
 ```
 ##### find data in embedded document
 ```sh
@@ -154,30 +153,31 @@ db.customers.find({age:{$lt:40}});
     ]
 }
 
-db.customers.find({"address.city":"Boston"});
+$ db.customers.find({"address.city":"Boston"});
 #query memberships
-db.customers.find({memberships:"m1"});
+$ db.customers.find({memberships:"m1"});
 ```
 ##### sorting
 
 ```sh
 #sorting
-db.customers.find().sort({last_name:1});
+$ db.customers.find().sort({last_name:1});
 # here 1 means ascending , -1 means decending 
 ```
 ##### count documents
 ```sh
 #count documents
-db.customers.find(gender:"male").count();
+$ db.customers.find(gender:"male").count();
 ```
 ##### limit
 ```sh
-db.customers.find(gender:"male").limit(4);
+$ db.customers.find(gender:"male").limit(4);
 ```
 ##### forEach loop
 ```sh
 
 # for each
-db.customers.find().forEach(function(doc){print("customer name":+doc.first_name)});
+$ db.customers.find().forEach(function(doc){print("customer name":+doc.first_name)});
 # here doc is variable it can be anything
 ```
+
