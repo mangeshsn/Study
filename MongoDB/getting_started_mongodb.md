@@ -180,4 +180,4 @@ $ db.customers.find(gender:"male").limit(4);
 $ db.customers.find().forEach(function(doc){print("customer name":+doc.first_name)});
 # here doc is variable it can be anything
 ```
-
+[Video](https://www.youtube.com/watch?v=pWbMrx5rVBE)
